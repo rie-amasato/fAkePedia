@@ -1,1 +1,6 @@
+.env
+
+*checkpoint*
+
 fAkePedia/node_modules/*
+fAkePedia/.nuxt
