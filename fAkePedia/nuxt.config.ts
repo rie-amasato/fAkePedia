@@ -2,4 +2,5 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
+  css: ["amasugar/css/amasugar/amasugar.css"],
 })
