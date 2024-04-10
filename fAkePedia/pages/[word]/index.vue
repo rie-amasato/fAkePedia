@@ -40,8 +40,6 @@ const text=ref()
 const str_search=ref()
 
 const keydown_input=(e)=>{
-    console.log(e)
-    console.log(e.isComposing)
     if (e.code=="Enter" && !e.isComposing)click_search()
 }
 
