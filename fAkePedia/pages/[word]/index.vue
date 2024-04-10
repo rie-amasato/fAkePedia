@@ -2,7 +2,9 @@
     <div class="container white w-100p">
         <h2 class="title">{{title}}</h2>
         <div class="text">
-            {{text}}
+            <p>
+                {{text}}
+            </p>
         </div>
     </div>
 </template>
