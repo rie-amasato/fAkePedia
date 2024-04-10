@@ -1,14 +1,4 @@
 <template>
-    <div>
-        <div class="container white">
-            fAke Pedia. 
-        </div>
-        <div class="container white">
-            <input v-model="str_search" @keydown="keydown_input" />
-            <button @click="click_search">検索</button>
-        </div>
-    </div>
-
     <div class="container white w-100p">
         <h2 class="title">{{title}}</h2>
         <div class="text">
@@ -37,15 +27,6 @@ const route=useRoute()
 
 const title=ref()
 const text=ref()
-const str_search=ref()
-
-const keydown_input=(e)=>{
-    if (e.code=="Enter" && !e.isComposing)click_search()
-}
-
-const click_search=()=>{
-    navigateTo(`/${str_search.value}`)
-}
 
 onMounted(async()=>{
     text.value="生成中"
