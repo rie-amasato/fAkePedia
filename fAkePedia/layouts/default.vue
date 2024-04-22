@@ -23,6 +23,13 @@
 </style>
 
 <script setup>
+useSeoMeta({
+    title: "fAkePedia",
+    ogTitle: "fAkePedia",
+    description: "AIが嘘を生成することがあると思います。そんな虚構、幻影（ハルシネーション）を意図的に起こして観察してみたい。そう思いませんか？えぇ、はい。そう思うんですよ。ね？",
+    ogDescription: "AIが嘘を生成することがあると思います。そんな虚構、幻影（ハルシネーション）を意図的に起こして観察してみたい。そう思いませんか？えぇ、はい。そう思うんですよ。ね？"
+})
+
 const str_search=ref()
 
 const keydown_input=(e)=>{

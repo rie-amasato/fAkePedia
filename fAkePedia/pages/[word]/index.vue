@@ -30,13 +30,17 @@ const route=useRoute()
 const title=ref()
 const text=ref()
 
+title.value=route.params.word
+
+useHead({
+    title: `fAkePedia - ${title.value}`
+})
+
 onMounted(async()=>{
     text.value="生成中"
-    title.value=route.params.word
 
     const res=await fetch(`https://rieama.fly.dev/fAkePedia/${route.params.word}`)
     
     text.value=(await(res.json())).text
-    console.log(text.value)
 })
 </script>

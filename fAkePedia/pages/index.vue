@@ -33,6 +33,10 @@
 const title="ハルシネーション"
 const text=ref()
 
+useHead({
+    title: `fAkePedia - ${title}`
+})
+
 onMounted(async()=>{
     text.value="生成中"
 
