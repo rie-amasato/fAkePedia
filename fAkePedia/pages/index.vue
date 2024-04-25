@@ -8,7 +8,9 @@
             </p>
             <p>
                 ↓たとえばこんなかんじ↓<br>
-                {{text}}
+                <div class="container white">
+                    {{text}}
+                </div>
             </p>
         </div>
     </div>
