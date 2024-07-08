@@ -59,6 +59,10 @@ const click_search=()=>{
 </script>
 
 <style scoped>
+.logo{
+    overflow: hidden;
+}
+
 .mainpage{
   width: 90%;
   max-width: 720px;
