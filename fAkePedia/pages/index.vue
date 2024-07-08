@@ -1,5 +1,5 @@
 <template>
-    <div class="container white w-100p">
+    <div class="container white">
         <h2 class="title">ハルシネーション</h2>
         <div class="text">
             <p>
@@ -26,9 +26,6 @@
     white-space: pre-wrap;
 }
 
-.w-100p{
-    width: 100%;
-}
 </style>
 
 <script setup>

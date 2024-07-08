@@ -1,14 +1,17 @@
 <template>
-    <div>
-        <div class="container white">
-            fAke Pedia. 
+    <div class="flex mainpage">
+        <div class="container white logo">
+            <img src="/logo.png" height="56" alt="fAke Pedia.">
         </div>
-        <div class="container white">
+        <span class="container white h-7" style="width: calc(90% - 56px)">
+            <div>fAkePedia -ウソ辞書-</div>
             <input v-model="str_search" @keydown="keydown_input" />
             <button @click="click_search">検索</button>
-        </div>
+        </span>
     </div>
-    <NuxtPage />
+    <div class="mainpage">
+        <NuxtPage />
+    </div>
     <div>
         <iframe class="ads" src="ads.html" />
     </div>
@@ -20,6 +23,19 @@
     width: 100%;
     height: 80px;
 }
+
+.flex{
+    display: flex;
+}
+
+.h-7{
+    height: 56px;
+}
+
+.bg{
+    background-color: #777;
+}
+
 </style>
 
 <script setup>
@@ -41,3 +57,12 @@ const click_search=()=>{
 }
 
 </script>
+
+<style scoped>
+.mainpage{
+  width: 90%;
+  max-width: 720px;
+  margin-right: auto;
+  margin-left: auto;
+}
+</style>

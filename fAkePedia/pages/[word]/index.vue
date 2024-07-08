@@ -1,5 +1,5 @@
 <template>
-    <div class="container white w-100p">
+    <div class="container white w-90p">
         <h2 class="title">{{title}}</h2>
         <div class="text">
             <p>
@@ -19,8 +19,8 @@
     white-space: pre-wrap;
 }
 
-.w-100p{
-    width: 100%;
+.w-90p{
+    width: 90%;
 }
 </style>
 
