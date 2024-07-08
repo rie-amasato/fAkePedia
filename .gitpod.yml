@@ -1,12 +1,16 @@
-ports:
- - port: 8888
-   onOpen: open-browser
+# ports:
+#  - port: 8888
+#    onOpen: open-browser
 tasks:
-  - name: open_jupyter
-    init: "pip install --upgrade pip"
-    before: |
-      pip install -r requirements.txt
-      pip uninstall -y notebook
-      pip uninstall -y notebook
-      pip install notebook==6.0.0
-    command: "jupyter notebook --ip=* --NotebookApp.token=''"
+  # - name: open_jupyter
+  #   init: "pip install --upgrade pip"
+  #   before: |
+  #     pip install -r requirements.txt
+  #     pip uninstall -y notebook
+  #     pip uninstall -y notebook
+  #     pip install notebook==6.0.0
+  #   command: "jupyter notebook --ip=* --NotebookApp.token=''"
+  - name: fAkePdiaWeb
+    init: "cd fAkePedia"
+    before: "yarn -n"
+    command: "yarn dev"
