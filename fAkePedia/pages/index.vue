@@ -32,6 +32,8 @@
 const title="ハルシネーション"
 const text=ref()
 
+const runtimeConfig=useRuntimeConfig()
+
 useHead({
     title: `fAkePedia - ${title}`
 })
@@ -39,9 +41,12 @@ useHead({
 onMounted(async()=>{
     text.value="生成中"
 
-    const res=await fetch(`https://rieama.fly.dev/fAkePedia/${title}`)
+    try{
+        const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePedia/${title}`)
     
-    text.value=(await(res.json())).text
-    console.log(text.value)
+        text.value=(await(res.json())).text
+    }catch{
+        text.value="エラーが発生したようです。画面更新すると治るかもしれません。"
+    }
 })
 </script>

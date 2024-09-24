@@ -26,6 +26,7 @@
 
 <script setup>
 const route=useRoute()
+const runtimeConfig=useRuntimeConfig()
 
 const title=ref()
 const text=ref()
@@ -39,8 +40,12 @@ useHead({
 onMounted(async()=>{
     text.value="生成中"
 
-    const res=await fetch(`https://rieama.fly.dev/fAkePedia/${route.params.word}`)
+    try{
+        const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePedia/${route.params.word}`)
     
-    text.value=(await(res.json())).text
+        text.value=(await(res.json())).text
+    }catch{
+        text.value="エラーが発生したようです。画面更新すると治るかもしれません。"
+    }
 })
 </script>
