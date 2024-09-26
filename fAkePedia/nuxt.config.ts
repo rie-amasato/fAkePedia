@@ -7,5 +7,8 @@ export default defineNuxtConfig({
   },
   devtools: { enabled: true },
   ssr: false,
-  css: ["@/assets/css/general.css", "amasugar/amasugar.css"]
+  css: ["@/assets/css/general.css", "amasugar/amasugar.css"],
+  app: {
+    buildAssetsDir: '/fakepedia/'
+  }
 })
