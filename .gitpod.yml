@@ -11,6 +11,8 @@ tasks:
   #     pip install notebook==6.0.0
   #   command: "jupyter notebook --ip=* --NotebookApp.token=''"
   - name: fAkePdiaWeb
-    init: "cd fAkePedia"
-    before: "yarn -n"
+    init: |
+      cd fAkePedia
+      cd fAkePedia
+    before: "yarn"
     command: "yarn dev"
