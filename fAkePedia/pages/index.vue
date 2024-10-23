@@ -8,15 +8,16 @@
             </p>
             <p>
                 ↓たとえばこんなかんじ↓<br>
-                <div class="container white">
-                    {{text}}
-                </div>
             </p>
+            <div class="container white">
+                {{text}}
+            </div>
+            
         </div>
     </div>
 </template>
 
-<style>
+<style scoped>
 .title{
     width: 100%;
     border-bottom: solid 4px gray;

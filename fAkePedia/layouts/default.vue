@@ -9,11 +9,13 @@
             <button @click="click_search">検索</button>
         </span>
     </div>
-    <div class="mainpage">
-        <NuxtPage />
-    </div>
-    <div>
-        <iframe class="ads" src="ads.html" />
+    <div class="mainpage grid">
+        <div class="s1 e4">
+            <NuxtPage />
+        </div>
+        <div class="container white s4 e5">
+            <History />
+        </div>
     </div>
 </template>
 

@@ -1,9 +1,9 @@
 <template>
     <div class="container white">
-        <h2 class="title">{{title}}</h2>
+        <h2 class="title">{{text[3]}}</h2>
         <div class="text">
             <p>
-                {{text}}
+                {{text[1]}}
             </p>
         </div>
     </div>
@@ -29,7 +29,7 @@ const route=useRoute()
 const runtimeConfig=useRuntimeConfig()
 
 const title=ref()
-const text=ref()
+const text=ref([null, "履歴取得中", null, "履歴取得中"])
 
 title.value=route.params.word
 
@@ -38,12 +38,9 @@ useHead({
 })
 
 onMounted(async()=>{
-    text.value="生成中"
-
     try{
-        const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePedia/${route.params.word}`)
-    
-        text.value=(await(res.json())).text
+        const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePedia-history/${route.params.id}`)
+        text.value=(await res.json())
     }catch{
         text.value="エラーが発生したようです。画面更新すると治るかもしれません。"
     }
