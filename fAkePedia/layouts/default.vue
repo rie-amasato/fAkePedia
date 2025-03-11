@@ -17,6 +17,7 @@
             <History />
         </div>
     </div>
+    <ads />
 </template>
 
 <style>
