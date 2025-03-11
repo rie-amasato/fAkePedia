@@ -10,23 +10,17 @@
         </span>
     </div>
     <div class="mainpage grid">
-        <div class="s1 e4">
+        <div :class="{s1: true, e4: !isMobile, e5: isMobile}">
             <NuxtPage />
             <ads />
         </div>
-        <div class="container white s4 e5">
+        <div v-if="!isMobile" class="container white s4 e5">
             <History />
         </div>
     </div>
 </template>
 
 <style>
-.ads{
-    border: none;
-    width: 100%;
-    height: 80px;
-}
-
 .flex{
     display: flex;
 }
@@ -49,7 +43,12 @@ useSeoMeta({
     ogDescription: "AIが嘘を生成することがあると思います。そんな虚構、幻影（ハルシネーション）を意図的に起こして観察してみたい。そう思いませんか？えぇ、はい。そう思うんですよ。ね？"
 })
 
+const isMobile=ref(false)
 const str_search=ref()
+
+onMounted(()=>{
+    isMobile.value=window.matchMedia && window.matchMedia("(max-device-width:640px)").matches
+})
 
 const keydown_input=(e)=>{
     if (e.code=="Enter" && !e.isComposing)click_search()
