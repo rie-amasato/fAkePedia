@@ -12,12 +12,12 @@
     <div class="mainpage grid">
         <div class="s1 e4">
             <NuxtPage />
+            <ads />
         </div>
         <div class="container white s4 e5">
             <History />
         </div>
     </div>
-    <ads />
 </template>
 
 <style>
