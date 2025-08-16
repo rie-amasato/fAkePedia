@@ -1,11 +1,11 @@
-<template>
-    <iframe class="adsense-70" src="https://fakepedia.pages.dev/ads.html" />
-</template>
+<template>ads
+    <iframe class="ads" src="/ads.html"></iframe>
+ads</template>
 
-<style scoped>
-.adsense-70{
-    border: 0;
+<style>
+.ads{
+    border: none;
     width: 100%;
-    height: 80px;
+    height: 68px;
 }
 </style>
