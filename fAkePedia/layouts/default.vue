@@ -9,10 +9,10 @@
             <button @click="click_search">検索</button>
         </span>
     </div>
+    <Ads />
     <div class="mainpage grid">
         <div :class="{s1: true, e4: !isMobile, e5: isMobile}">
             <NuxtPage />
-            <Ads />
         </div>
         <div v-if="!isMobile" class="container white s4 e5">
             <History />
