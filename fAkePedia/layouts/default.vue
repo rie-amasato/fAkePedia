@@ -12,7 +12,7 @@
     <div class="mainpage grid">
         <div :class="{s1: true, e4: !isMobile, e5: isMobile}">
             <NuxtPage />
-            <ads />
+            <Ads />
         </div>
         <div v-if="!isMobile" class="container white s4 e5">
             <History />
@@ -55,7 +55,7 @@ const keydown_input=(e)=>{
 }
 
 const click_search=()=>{
-    navigateTo(`/${str_search.value}`)
+    navigateTo(`/word/${str_search.value}`)
 }
 
 </script>
