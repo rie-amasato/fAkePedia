@@ -38,10 +38,24 @@ useHead({
 })
 
 onMounted(async()=>{
-    text.value="生成中"
+    text.value=""
 
-    try{
-        const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePedia/${route.params.word}`)
+    const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePediaStreaming/${route.params.word}`)
+    
+    if (res.status==500){
+        text.value="記事作成サーバーでエラーが発生したようです。多分レート制限なので明日またアクセスしてみてください。"
+        return
+    }
+    const streamReader=res.body.getReader()
+
+    const decoder=new TextDecoder()
+    let readResult={value: "", done: false}
+    while(!readResult.done){
+        readResult=await streamReader.read()
+    
+        if(!!readResult.value){
+            text.value+=decoder.decode(readResult.value)
+        }
     
         text.value=(await(res.json())).text
     }catch{
