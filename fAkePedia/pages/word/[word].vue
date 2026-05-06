@@ -56,10 +56,6 @@ onMounted(async()=>{
         if(!!readResult.value){
             text.value+=decoder.decode(readResult.value)
         }
-    
-        text.value=(await(res.json())).text
-    }catch{
-        text.value="エラーが発生したようです。画面更新すると治るかもしれません。"
     }
 })
 </script>
