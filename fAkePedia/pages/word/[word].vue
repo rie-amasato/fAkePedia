@@ -2,7 +2,7 @@
     <div class="container white">
         <h2 class="title">{{title}}</h2>
         <div class="text">
-            <div v-if="isLoading" class="mh-auto" style="display: flex; gap: 16px;">
+            <div v-if="isLoading" class="mh-auto" style="overflow: hidden; display: flex; justify-content: center; gap: 16px;">
                 <div class="dondurma violet" style="animation-delay: -0.2s;" />
                 <div class="dondurma pink" style="animation-delay: -0.4s;" />
                 <div class="dondurma red" style="animation-delay: -0.6s;" />
