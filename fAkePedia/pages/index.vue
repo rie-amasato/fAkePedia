@@ -10,6 +10,15 @@
                 ↓たとえばこんなかんじ↓<br>
             </p>
             <div class="container white">
+                <div v-if="isLoading" class="mh-auto" style="display: flex; gap: 16px;">
+                    <div class="dondurma violet" style="animation-delay: -0.2s;" />
+                    <div class="dondurma pink" style="animation-delay: -0.4s;" />
+                    <div class="dondurma red" style="animation-delay: -0.6s;" />
+                    <div class="dondurma orange" style="animation-delay: -0.8s;" />
+                    <div class="dondurma yellow" style="animation-delay: -1s;" />
+                    <div class="dondurma green" style="animation-delay: -1.2s;" />
+                    <div class="dondurma blue" style="animation-delay: -1.4s;" />
+                </div>
                 {{text}}
             </div>
             
@@ -30,6 +39,7 @@
 </style>
 
 <script setup>
+const isLoading=ref(true)
 const title="ハルシネーション"
 const text=ref()
 
@@ -43,6 +53,7 @@ onMounted(async()=>{
     text.value=""
 
     const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePediaStreaming/${title}`)
+    isLoading.value=false
 
     if (res.status==500){
         text.value="記事作成サーバーでエラーが発生したようです。多分レート制限なので明日またアクセスしてみてください。"

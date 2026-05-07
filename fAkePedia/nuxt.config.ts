@@ -5,10 +5,14 @@ export default defineNuxtConfig({
       baseUrl: "https://secure-olimpia-shihoaka-fd09df42.koyeb.app"
     }    
   },
+
   devtools: { enabled: true },
   ssr: false,
   css: ["@/assets/css/general.css", "amasugar/amasugar.css"],
+
   app: {
     buildAssetsDir: '/fakepedia/'
-  }
+  },
+
+  compatibilityDate: "2026-05-06"
 })

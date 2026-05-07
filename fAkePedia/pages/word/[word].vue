@@ -2,6 +2,15 @@
     <div class="container white">
         <h2 class="title">{{title}}</h2>
         <div class="text">
+            <div v-if="isLoading" class="mh-auto" style="display: flex; gap: 16px;">
+                <div class="dondurma violet" style="animation-delay: -0.2s;" />
+                <div class="dondurma pink" style="animation-delay: -0.4s;" />
+                <div class="dondurma red" style="animation-delay: -0.6s;" />
+                <div class="dondurma orange" style="animation-delay: -0.8s;" />
+                <div class="dondurma yellow" style="animation-delay: -1s;" />
+                <div class="dondurma green" style="animation-delay: -1.2s;" />
+                <div class="dondurma blue" style="animation-delay: -1.4s;" />
+            </div>
             <p>
                 {{text}}
             </p>
@@ -28,6 +37,7 @@
 const route=useRoute()
 const runtimeConfig=useRuntimeConfig()
 
+const isLoading=ref(true)
 const title=ref()
 const text=ref()
 
@@ -41,7 +51,8 @@ onMounted(async()=>{
     text.value=""
 
     const res=await fetch(`${runtimeConfig.public.baseUrl}/fAkePediaStreaming/${route.params.word}`)
-    
+    isLoading.value=false
+
     if (res.status==500){
         text.value="記事作成サーバーでエラーが発生したようです。多分レート制限なので明日またアクセスしてみてください。"
         return
